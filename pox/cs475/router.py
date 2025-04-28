@@ -121,12 +121,12 @@ class RouterSwitch:
 
     def _handle_PacketIn(self, event):
         """
-        Handle all incoming packets to all switches
+        Handle all incoming packets at this switch
         """
         ## Step 1: Unpack information about the packet
         src_port = event.port
         try:
-            packet = event.parsed.pack()
+            packet = event.parsed.pack() # This contains all bytes of the packet from the ethernet header up
         except:
             #log.debug("Failed to process packet {}".format(event))
             return

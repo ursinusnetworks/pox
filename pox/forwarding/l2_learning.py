@@ -97,6 +97,8 @@ class LearningSwitch (object):
     """
 
     packet = event.parsed
+    print("packet", packet)
+    print("\tpacket.pack():", packet.pack())
 
     def flood (message = None):
       """ Floods the packet """
